@@ -11,7 +11,7 @@
           </div>
         </div>
         {{ range .members }}
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-6 col-md-6">
           <div class="site-team-member">
             <div class="site-team-member-image">
               <img src="{{ .image | absURL }}" alt="team-member">
@@ -20,9 +20,9 @@
               <h3>{{ .name }}</h3>
               <p>{{ .designation }}</p>
               <ul class="site-team-member-social">
-                <li><a href="{{ .medium | absURL }}"><i class="fa fa-medium"></i></a></li>
-                <li><a href="{{ .linkedin | absURL }}"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="{{ .instagram | absURL }}"><i class="fa fa-instagram"></i></a></li>
+                {{ if .medium }}<li><a href="{{ .medium | absURL }}"><i class="fa fa-medium"></i></a></li>{{ end }}
+                {{ if .linkedin }}<li><a href="{{ .linkedin | absURL }}"><i class="fa fa-linkedin"></i></a></li>{{ end }}
+                {{ if .instagram }}<li><a href="{{ .instagram | absURL }}"><i class="fa fa-instagram"></i></a></li>{{ end }}
               </ul>
             </div>
           </div>
